@@ -45,6 +45,43 @@
         nav ul li a:hover {
             color: #EA5455;
         }
+        form{
+            margin: auto;
+        }
+        form{
+            margin: 0%;
+            background-color: #EA5455;
+            width: 20%;
+            height: 600px;
+            padding: 20px; 
+            
+        }
+        input, textarea{
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-family: 'NotoSerif';
+            background-color:#F9F5EB;
+            color: #002B5B; 
+        }
+        .slider{
+            cursor: pointer;
+        }
+        .range .field{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .genre{
+            font-family: 'NotoSerif';
+            background-color:#E4DCCF;
+            color: #002B5B; 
+        }
+
     </style>
 </head>
 <body>
@@ -56,7 +93,52 @@
             </ul>
     </nav>
     <main>
-        <h1>Recenzie</h1>
+        <br>
+        <form action="get">
+            <h1>Recenzia filmu</h1>
+            <input type="text" name="film" id="film" required placeholder="názov filmu">
+            <input type="text" name="meno" id="meno" placeholder="meno">
+            <input type="email" name="email" id="email" required placeholder="email">
+            <textarea name="recenzia" id="recenzia" cols="30" rows="10" placeholder="Sem napíš svoju recenziu..."></textarea>
+            <label for="date">Naposledy pozretý</label>
+            <input type="date" name="date" id="date">
+            <label for="range">Hodnotenie</label>
+            <div class="range">
+                <div class="field">
+                    <div >0</div>
+                    <input type="range" step="10" name="range" id="range" required min="0" max="100" value="0" list="ticks" class="slider">
+                    <div >100</div>
+                </div>
+            </div>
+             <datalist id="ticks" >
+                <option value="0"></option>
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50"></option>
+                <option value="60"></option>
+                <option value="70"></option>
+                <option value="80"></option>
+                <option value="90"></option>
+                <option value="100"></option>
+            </datalist>
+            <label for="genre">Žáner</label>
+            <select name="genre" id="genre" class="genre">
+                <option value="akcny">Akčný</option>
+                <option value="dobrodruzny">Doborodrožný</option>
+                <option value="komedia">Komédia</option>
+                <option value="animovany">Animovaný</option>
+                <option value="drama">Dráma</option>
+                <option value="historicky">Historický</option>
+                <option value="mysteriozny">Mysteriózny</option>
+                <option value="psychologicky">Psychologický</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="scifi">Sci-fi</option>
+            </select>
+            <input type="submit" value="Odosľať" class="submit">
+
+        </form>
     </main>
 </body>
 </html>
